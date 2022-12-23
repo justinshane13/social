@@ -10,15 +10,15 @@ const {
 const router = express.Router()
 
 // GET all posts
-router.get('/', getAllPosts)
+router.get('/posts', getAllPosts)
 
 // GET a single post
-router.get('/:id', getSinglePost)
+router.get('/posts/:id', getSinglePost)
 
 // POST a new posts
-router.post('/', createPost)
+router.post('/posts', createPost)
 
 // DELETE a post
-router.delete('/:id', deletePost)
+router.delete('/posts/:id', deletePost)
 
 module.exports = router
