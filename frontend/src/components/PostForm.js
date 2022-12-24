@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-const PostForm = () => {
+const PostForm = ({topic}) => {
+    const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const [isActive, setIsActive] = useState(false)
     const [error, setError] = useState(null)
@@ -10,9 +11,13 @@ const PostForm = () => {
         e.preventDefault()
 
         const post = {
+            title: title,
             content: content,
-            author: "anonymous"
+            author: "anonymous",
+            topic: topic
         }
+
+        console.log(post)
 
         const response = await fetch('/posts', {
             method: 'POST',
@@ -30,6 +35,7 @@ const PostForm = () => {
         if (response.ok) {
             setError(null)
             setEmptyFields([])
+            setTitle('')
             setContent('')
             console.log('new post added!')
         }
@@ -39,17 +45,25 @@ const PostForm = () => {
 
     return (
         <div className="form-container">
-            {!isActive && <button onClick={() => setIsActive(true)}>Add a new post</button>}
+            {!isActive && <button onClick={() => setIsActive(true)} className="input-button">Add a new post</button>}
             {isActive && 
                 <div className="form-flexbox">
                     <img src="/images/IMG_2040.jpg" alt="profile" className="profile-image-form"/>
                     <form>
+                        <input 
+                            type="text"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            placeholder="Give your post a title"
+                            className="input-title"
+                        />
                         <textarea 
                         type="text"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
-                        placeholder="Share your thoughts"
+                        placeholder="Share your thoughts . . ."
                         className="input-content"
+                        maxLength={300}
                         />
                         <button className="input-button" type="submit" onClick={handleSubmit}>Post</button>
                     </form>

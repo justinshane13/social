@@ -26,13 +26,14 @@ const getSinglePost = async (req, res) => {
 
 // create a new post
 const createPost = async (req, res) => {
-    const { title, content, author } = req.body
+    const { title, content, author, topic } = req.body
 
     const newPost = {
         title: title,
         content: content,
         likes: 0,
-        author: author
+        author: author,
+        topic: topic
     }
 
     let emptyFields = []
@@ -45,6 +46,9 @@ const createPost = async (req, res) => {
     }
     if (!author) {
         emptyFields.push('author')
+    }
+    if (!topic) {
+        emptyFields.push('topic')
     }
     if (emptyFields.length > 0) {
         return res.status(400).json({ error: 'Please fill in all fields', emptyFields })

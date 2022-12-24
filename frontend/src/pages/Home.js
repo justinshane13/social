@@ -5,16 +5,13 @@ import PostForm from '../components/PostForm'
 
 const Home = () => {
     const [posts, setPosts] = useState(null)
+    const [topic, setTopic] = useState("General")
 
     useEffect(() => {
         const fetchPosts = async () => {
             const response = await fetch('/posts')
-            console.log(response)
             const json = await response.json()
             
-            if (!response.ok) {
-                console.log(response)
-            }
             if (response.ok) {
                 setPosts(json)
             }
@@ -23,16 +20,18 @@ const Home = () => {
         fetchPosts()
     }, [])
 
-    console.log(posts)
+    const changeTopic = (topic) => {
+        setTopic(topic)
+    }
 
     return (
         <div className="homepage">
-            <Sidebar />
+            <Sidebar topic={topic} changeTopic={changeTopic}/>
             <div className="main">
-                <h1>Navbar goes here</h1>
-                <PostForm />
+                <h2>{topic} —</h2>
+                <PostForm topic={topic} />
                 {posts && posts.map(post => (
-                    <Post key={post._id} post={post} />
+                    <Post key={post._id} post={post} topic={topic} />
                 ))}
             </div>
         </div>

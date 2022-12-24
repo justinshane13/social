@@ -1,12 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #232F23;
+  font-family: Poppins;
 }
 
 .sidebar {
@@ -15,8 +10,14 @@ body {
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 30%;
+  top: 0%;
   width: 130px;
+  height: 100vh;
+}
+
+.social-logo {
+  width: 35px;
+  margin-bottom: 100px;
 }
 
 .sidebar > button {
@@ -24,77 +25,116 @@ body {
   border: none;
   margin-bottom: 30px;
   cursor: pointer;
+  font-family: Poppins;
+}
+
+.sidebar > button:hover {
+  font-weight: bold;
 }
 
 .main {
   margin-left: 130px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 2000px;
+  background: #FBFBFB;
 }
 
 .form-container {
+  display: flex;
+  justify-content: center;
   padding: 0px;
+  width: calc(70% + 40px);
+  max-width: 600px;
 }
 
 .form-flexbox {
   display: flex;
   align-items: center;
-  width: 70%;
-  padding: 25px;
+  width: 100%;
+  margin-top: 10px;
+  max-width: 600px;
 }
 
 .form-flexbox > form {
   display: flex;
   flex-direction: column;
   margin-left: 25px;
-  width: 50%;
+  width: calc(100% - 75px);
+  max-width: 600px;
 }
 
 .profile-image-form {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   border-radius: 100%;
   object-fit: cover;
   align-self: flex-start;
 }
 
-.input-content {
+.input-title {
   border: none;
   background-color: #FFFFFF;
-  box-shadow: 2px 2px 5px #DDDDDD;
-  height: 100px;
+  box-shadow: 2px 2px 5px #DADADA;
   border-radius: 10px;
   padding: 10px 20px;
   margin-top: 0px;
+  margin-bottom: 20px;
   font-size: 16px;
   resize: none;
+  font-family: Poppins;
+}
+
+.input-title:focus {
+  outline: none;
+  box-shadow: 3px 3px 10px #DADADA;
+}
+
+.input-content {
+  border: none;
+  background-color: #FFFFFF;
+  box-shadow: 2px 2px 5px #DADADA;
+  height: 75px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  resize: none;
+  font-family: Poppins;
 }
 
 .input-content:focus {
   outline: none;
-  box-shadow: 2px 2px 10px #DDDDDD;
+  box-shadow: 3px 3px 10px #DDDDDD;
 }
 
 .input-button {
-  margin-top: 20px;
-  background: rgb(16, 84, 25);
+  margin-top: 0px;
+  background: #4420E7;
   border: none;
   height: 30px;
   border-radius: 15px;
   color: #F1F6FD;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .input-button:hover {
-  background: rgb(16, 84, 25, 0.85); 
+  background: #4420E7EF;
+  box-shadow: 3px 3px 8px #BABABA;
 }
 
 .post {
   border: .5px solid lightgray;
+  border-radius: 8px;
   padding: 20px 20px;
   display: flex;
   width: 70%;
+  max-width: 600px;
+  background-color: #FFFFFF;
+  margin-top: 40px;
 }
 
 .profile-image {
@@ -112,4 +152,19 @@ body {
 
 .author {
   margin-top: 0px;
+  font-size: 12px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 25px;
+}
+
+.content {
+  font-size: 14px;
+}
+
+.date {
+  font-size: 10px;
 }
