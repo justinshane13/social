@@ -20,8 +20,15 @@ const Home = () => {
         fetchPosts()
     }, [])
 
-    const changeTopic = (topic) => {
-        setTopic(topic)
+    const changeTopic = async (newTopic) => {
+        setTopic(newTopic)
+
+        const response = await fetch(`/posts/${newTopic.toLowerCase()}`)
+        const json = await response.json()
+
+        if (response.ok) {
+            setPosts(json)
+        }
     }
 
     return (

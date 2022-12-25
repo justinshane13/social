@@ -14,7 +14,7 @@ const PostForm = ({topic}) => {
             title: title,
             content: content,
             author: "anonymous",
-            topic: topic
+            topic: topic.toLowerCase()
         }
 
         console.log(post)

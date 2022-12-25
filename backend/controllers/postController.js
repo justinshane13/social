@@ -1,6 +1,17 @@
 const Post = require('../models/postModel')
 const mongoose = require('mongoose')
 
+// create array of categories to be used in route checking
+const categories = [
+    "general",
+    "career",
+    "culture",
+    "news",
+    "politics",
+    "social",
+    "sports"
+]
+
 // get all posts
 const getAllPosts = async (req, res) => {
     const posts = await Post.find({}).sort({createdAt: -1})
@@ -10,6 +21,15 @@ const getAllPosts = async (req, res) => {
 // get a single post
 const getSinglePost = async (req, res) => {
     const { id } = req.params
+    
+    if (categories.includes(id)) {
+        if (id === "general") {
+            const posts = await Post.find({}).sort({createdAt: -1})
+            return res.status(200).json(posts)
+        }
+        const posts = await Post.find({topic: id}).sort({createdAt: -1})
+        return res.status(200).json(posts)
+    }
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({error: 'Post ID does not exist'})
@@ -22,6 +42,15 @@ const getSinglePost = async (req, res) => {
     }
 
     res.status(200).json(post)
+}
+
+// get specific group of posts
+const getGroupOfPosts = async (req, res) => {
+    const { topic } = req.params
+
+    const posts = await Post.find({topic: topic})
+
+    res.status(200).json(posts)
 }
 
 // create a new post
@@ -84,5 +113,6 @@ module.exports = {
     createPost,
     getAllPosts,
     getSinglePost,
+    getGroupOfPosts,
     deletePost
 }
