@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { usePostsContext } from '../hooks/usePostsContext'
 
 const PostForm = ({topic}) => {
+    const {posts, dispatch} = usePostsContext()
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const [isActive, setIsActive] = useState(false)
@@ -38,6 +40,8 @@ const PostForm = ({topic}) => {
             setTitle('')
             setContent('')
             console.log('new post added!')
+            dispatch({type: 'ADD_POST', payload: json})
+            console.log(posts)
         }
 
         setIsActive(false)
@@ -49,7 +53,7 @@ const PostForm = ({topic}) => {
             {isActive && 
                 <div className="form-flexbox">
                     <img src="/images/IMG_2040.jpg" alt="profile" className="profile-image-form"/>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <input 
                             type="text"
                             value={title}
@@ -65,7 +69,7 @@ const PostForm = ({topic}) => {
                         className="input-content"
                         maxLength={300}
                         />
-                        <button className="input-button" type="submit" onClick={handleSubmit}>Post</button>
+                        <button className="input-button">Post</button>
                     </form>
                 </div>
             }

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
+import { usePostsContext } from '../hooks/usePostsContext'
 import Sidebar from '../components/Sidebar'
 import Post from '../components/Post'
 import PostForm from '../components/PostForm'
 
 const Home = () => {
-    const [posts, setPosts] = useState(null)
+    const {posts, dispatch} = usePostsContext()
     const [topic, setTopic] = useState("General")
 
     useEffect(() => {
@@ -13,12 +14,12 @@ const Home = () => {
             const json = await response.json()
             
             if (response.ok) {
-                setPosts(json)
+                dispatch({type: 'SET_POSTS', payload: json})
             }
         }
 
         fetchPosts()
-    }, [])
+    }, [dispatch])
 
     const changeTopic = async (newTopic) => {
         setTopic(newTopic)
@@ -27,7 +28,7 @@ const Home = () => {
         const json = await response.json()
 
         if (response.ok) {
-            setPosts(json)
+            dispatch({type: 'SET_POSTS', payload: json})
         }
     }
 
