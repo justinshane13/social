@@ -58,14 +58,14 @@ const PostForm = ({topic}) => {
                             type="text"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
-                            placeholder="Give your post a title"
+                            placeholder="Post title"
                             className="input-title"
                         />
                         <textarea 
                         type="text"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
-                        placeholder="Share your thoughts . . ."
+                        placeholder="Share your thoughts"
                         className="input-content"
                         maxLength={300}
                         />
