@@ -151,6 +151,11 @@ body {
   margin-left: 15px;
 }
 
+.post-top-row {
+  display: flex;
+  justify-content: space-between;
+}
+
 .author {
   margin-top: 10px;
   font-size: 12px;
