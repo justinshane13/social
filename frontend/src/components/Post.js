@@ -1,7 +1,9 @@
 // date-fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
-const Post = ({post, topic}) => {
+const Post = ({post}) => {
+    console.log(post.topic)
+
     return (
         <div className="post">
             <img className="profile-image" src="/images/IMG_2040.jpg" alt="profile" />
@@ -12,7 +14,7 @@ const Post = ({post, topic}) => {
                 </div>
                 <p className="title">{post.title}</p>
                 <p className="content">{post.content}</p>
-                <p className="date">{formatDistanceToNow(new Date(post.createdAt))} ago in {topic}</p>
+                <p className="date">{formatDistanceToNow(new Date(post.createdAt))} ago in {post.topic[0].toUpperCase() + post.topic.substring(1)}</p>
             </div>
         </div>
     )
