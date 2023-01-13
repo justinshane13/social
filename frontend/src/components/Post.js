@@ -12,7 +12,7 @@ const Post = ({post, topic}) => {
                 </div>
                 <p className="title">{post.title}</p>
                 <p className="content">{post.content}</p>
-                <p className="date">{formatDistanceToNow(new Date(post.createdAt))} ago in {post.topic}</p>
+                <p className="date">{formatDistanceToNow(new Date(post.createdAt))} ago in {topic}</p>
             </div>
         </div>
     )
