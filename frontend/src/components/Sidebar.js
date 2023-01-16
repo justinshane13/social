@@ -3,7 +3,10 @@
 const Sidebar = ({topic, changeTopic}) => {
     return (
         <div className="sidebar">
-            <img src="/images/Social-Logo.png" alt="social-logo" className="social-logo"/>
+            <div className="social-logo-container">
+                <img src="/images/Social-Logo.png" alt="social-logo" className="social-logo"/>
+                <p className="social-logo-text">Soci<span className="blue">A</span><span className="red">L</span><span className="green">L</span></p>
+            </div>
             <button style={{fontWeight: topic === "General" ? "bold" : "normal"}} onClick={() => changeTopic("General")}>General</button>
             <button style={{fontWeight: topic === "Career" ? "bold" : "normal"}} onClick={() => changeTopic("Career")}>Career</button>
             <button style={{fontWeight: topic === "Culture" ? "bold" : "normal"}} onClick={() => changeTopic("Culture")}>Culture</button>
