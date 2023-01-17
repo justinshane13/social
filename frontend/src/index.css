@@ -5,6 +5,56 @@ body {
   background: #FBFBFB;
 }
 
+label, input {
+  display: block;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding-left: 15px;
+  border: none;
+  background-color: #FFFFFF;
+  box-shadow: 2px 2px 5px #DADADA;
+  padding: 10px 20px;
+  font-size: 16px;
+  resize: none;
+  font-family: Poppins;
+}
+
+.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 1px 1px 20px #ddd;
+}
+
+.login-title {
+  display: flex;
+  justify-content: center;
+}
+
+.login > button {
+  margin-top: 15px;
+  background: #4420E7;
+  border: none;
+  height: 40px;
+  min-width: 200px;
+  border-radius: 10px;
+  color: #F1F6FD;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  font-family: Poppins;
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;

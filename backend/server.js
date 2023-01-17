@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.use('/', postRoutes)
+app.use('/api/posts', postRoutes)
 
 // connect to db
 mongoose.connect(process.env.MONGO_URI)

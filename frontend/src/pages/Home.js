@@ -10,7 +10,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const response = await fetch('/posts')
+            const response = await fetch('/api/posts')
             const json = await response.json()
             
             if (response.ok) {
@@ -24,7 +24,7 @@ const Home = () => {
     const changeTopic = async (newTopic) => {
         setTopic(newTopic)
 
-        const response = await fetch(`/posts/${newTopic.toLowerCase()}`)
+        const response = await fetch(`/api/posts/${newTopic.toLowerCase()}`)
         const json = await response.json()
 
         if (response.ok) {
