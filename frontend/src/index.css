@@ -9,9 +9,19 @@ label, input {
   display: block;
 }
 
+.login-signup-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logout-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
 input {
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
   width: 100%;
   border: 1px solid #ddd;
@@ -39,6 +49,7 @@ input {
 .login-title {
   display: flex;
   justify-content: center;
+  margin-bottom: 40px;
 }
 
 .login > button {
@@ -88,15 +99,22 @@ input {
 }
 
 .blue {
-  color: blue;
+  margin-left: .25em;
+  text-decoration: underline;
+  text-decoration-color: blue;
+  text-decoration-thickness: 3px;
 }
 
 .red {
-  color: red;
+  text-decoration: underline;
+  text-decoration-color: red;
+  text-decoration-thickness: 3px;
 }
 
 .green {
-  color: green;
+  text-decoration: underline;
+  text-decoration-color: green;
+  text-decoration-thickness: 3px;
 }
 
 .sidebar > button {

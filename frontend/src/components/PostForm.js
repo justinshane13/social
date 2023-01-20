@@ -21,7 +21,7 @@ const PostForm = ({topic}) => {
 
         console.log(post)
 
-        const response = await fetch('/posts', {
+        const response = await fetch('/api/posts', {
             method: 'POST',
             body: JSON.stringify(post),
             headers: {
