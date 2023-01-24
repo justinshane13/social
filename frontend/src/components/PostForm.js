@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { usePostsContext } from '../hooks/usePostsContext'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 const PostForm = ({topic}) => {
     const {posts, dispatch} = usePostsContext()
+    const {user} = useAuthContext()
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const [isActive, setIsActive] = useState(false)
@@ -15,7 +17,7 @@ const PostForm = ({topic}) => {
         const post = {
             title: title,
             content: content,
-            author: "anonymous",
+            author: user.username,
             topic: topic.toLowerCase()
         }
 
@@ -32,7 +34,7 @@ const PostForm = ({topic}) => {
 
         if (!response.ok) {
             setError(json.error)
-            setEmptyFields(json.EmptyFields)
+            setEmptyFields(json.emptyFields)
         }
         if (response.ok) {
             setError(null)
@@ -41,9 +43,13 @@ const PostForm = ({topic}) => {
             setContent('')
             console.log('new post added!')
             dispatch({type: 'ADD_POST', payload: json})
-            console.log(posts)
+            setIsActive(false)
         }
+    }
 
+    const cancelPost = () => {
+        setTitle('')
+        setContent('')
         setIsActive(false)
     }
 
@@ -59,17 +65,20 @@ const PostForm = ({topic}) => {
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
                             placeholder="Post title"
-                            className="input-title"
+                            className={emptyFields.includes('title') ? "input-title error" : "input-title"}
                         />
+                        {emptyFields.includes('title') && <div className='input-error'>{error}</div>}
                         <textarea 
-                        type="text"
-                        value={content}
-                        onChange={(e) => setContent(e.target.value)}
-                        placeholder="Share your thoughts"
-                        className="input-content"
-                        maxLength={300}
+                            type="text"
+                            value={content}
+                            onChange={(e) => setContent(e.target.value)}
+                            placeholder="Share your thoughts"
+                            className={emptyFields.includes('content') ? "input-content error" : "input-content"}
+                            maxLength={300}
                         />
+                        {emptyFields.includes('content') && <div className='input-error'>{error}</div>}
                         <button className="input-button">Post</button>
+                        <div className="cancel-button" onClick={cancelPost}>Cancel</div>
                     </form>
                 </div>
             }

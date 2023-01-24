@@ -44,21 +44,24 @@ const Home = () => {
     return (
         <div className="homepage">
             {user && (
-                <div className='logout-button'>
-                    <span>{user.username}</span>
-                    <button onClick={handleClick}>Log out</button>
+                <div className='logout-container'>
+                    <p className='logged-username'>{user.username}</p>
+                    <button className='logout-button' onClick={handleClick}>Log out</button>
                 </div>
             )}
             {!user && (
                 <div className='login-signup-buttons'>
-                    <Link to="/login">Log in</Link>
-                    <Link to="/signup">Sign up</Link>
+                    <Link to="/login" className="login-button">Log in</Link>
+                    <Link to="/signup" className="signup-button">Sign up</Link>
                 </div>
             )}
             <Sidebar topic={topic} changeTopic={changeTopic}/>
             <div className="main">
-                <h2>{topic} —</h2>
-                <PostForm topic={topic} />
+                <div className="topic-container">
+                    <h2>{topic}</h2>
+                    <img src={`/images/${topic}.png`} className="topic-icon" alt='topic icon'/>
+                </div>
+                {user && <PostForm topic={topic} />}
                 {posts && posts.map(post => (
                     <Post key={post._id} post={post} topic={topic} />
                 ))}

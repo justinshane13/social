@@ -10,13 +10,38 @@ label, input {
 }
 
 .login-signup-buttons {
+  padding: 20px 20px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+}
+
+.logout-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logged-username {
+  margin-right: 15px;
+  font-size: 12px;
 }
 
 .logout-button {
-  display: flex;
-  justify-content: flex-end;
+  background: #4420E7;
+  border: none;
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  color: #F1F6FD;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: Poppins;
+}
+
+.logout-button:hover {
+  box-shadow: 4px 4px 10px #BABABA;
 }
 
 input {
@@ -35,6 +60,23 @@ input {
   font-size: 16px;
   resize: none;
   font-family: Poppins;
+}
+
+.login-button, .signup-button {
+  background: #4420E7;
+  border: none;
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  color: #F1F6FD;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: Poppins;
+  margin-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 
 .login {
@@ -64,6 +106,11 @@ input {
   cursor: pointer;
   width: 100%;
   font-family: Poppins;
+}
+
+.login > button:hover {
+  box-shadow: 4px 4px 10px #BABABA;
+  font-weight: 500;
 }
 
 .sidebar {
@@ -138,6 +185,16 @@ input {
   height: 100%;
 }
 
+.topic-container {
+  display: flex;
+  align-items: center;
+}
+
+.topic-icon {
+  height: 25px;
+  margin-left: 10px;
+}
+
 .form-container {
   display: flex;
   justify-content: center;
@@ -207,21 +264,31 @@ input {
   box-shadow: 3px 3px 10px #DDDDDD;
 }
 
+.error {
+  outline: 2px solid red;
+}
+
 .input-button {
   margin-top: 0px;
   background: #4420E7;
   border: none;
   height: 40px;
   min-width: 200px;
-  border-radius: 20px;
+  border-radius: 10px;
   color: #F1F6FD;
   font-size: 16px;
   cursor: pointer;
 }
 
 .input-button:hover {
-  background: #4420E7EF;
-  box-shadow: 3px 3px 8px #BABABA;
+  box-shadow: 4px 4px 10px #BABABA;
+  font-weight: 500;
+}
+
+.input-error {
+  margin-top: 0px;
+  margin-bottom: 15px;
+  color: red;
 }
 
 .post {

@@ -1,8 +1,30 @@
 // date-fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import { useAuthContext } from '../hooks/useAuthContext'
+import { usePostsContext } from '../hooks/usePostsContext'
 
 const Post = ({post}) => {
-    console.log(post.topic)
+    const { dispatch } = usePostsContext()
+    const { user } = useAuthContext()
+
+    const handleDelete = async () => {
+        if (!user) {
+            return
+        }
+
+        const response = await fetch(`/api/posts/${post._id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${user.token}`
+            }
+        })
+        const json = await response.json()
+        console.log(json)
+
+        if (response.ok) {
+            dispatch({type: 'DELETE_POST', payload: json})
+        }
+    }
 
     return (
         <div className="post">
@@ -10,7 +32,7 @@ const Post = ({post}) => {
             <div className="post-content-container">
                 <div className="post-top-row">
                     <p className="author">{post.author}</p>
-                    <button>Delete</button>
+                    {user && user.username === post.author && <button onClick={handleDelete}>Delete</button>}
                 </div>
                 <p className="title">{post.title}</p>
                 <p className="content">{post.content}</p>
