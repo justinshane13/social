@@ -16,7 +16,7 @@ const Login = () => {
     return (
         <div>
             <form className="login" onSubmit={handleSubmit}>
-                <h3 className="login-title">Login to <span className="blue">SO</span><span className="red">CI</span><span className="green">AL</span></h3>
+                <h3 className="login-title">Log in to <span className="blue">SO</span><span className="red">CI</span><span className="green">AL</span></h3>
                 <input 
                     type="text"
                     onChange={(e) => setUsername(e.target.value)}
@@ -30,8 +30,7 @@ const Login = () => {
                     placeholder="Password"
                 />
                 <button>Login</button>
-                <div className='signup-cta'>New to SOCIAL? Create an account.</div>
-                <Link to="/signup" className="signup-cta-button">Sign up</Link>
+                <div className='signup-cta'>New to SOCIAL? <Link to="/signup">Sign up.</Link></div>
             </form>
         </div>
     )
