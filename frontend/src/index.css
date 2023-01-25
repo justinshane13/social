@@ -91,7 +91,7 @@ input {
 .login-title {
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .login > button {
@@ -109,6 +109,35 @@ input {
 }
 
 .login > button:hover {
+  box-shadow: 4px 4px 10px #BABABA;
+  font-weight: 500;
+}
+
+.signup-cta {
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+.signup-cta-button {
+  margin-top: 15px;
+  background: #4420E7;
+  border: none;
+  height: 40px;
+  min-width: 200px;
+  border-radius: 10px;
+  color: #F1F6FD;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  font-family: Poppins;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-cta-button:hover {
   box-shadow: 4px 4px 10px #BABABA;
   font-weight: 500;
 }

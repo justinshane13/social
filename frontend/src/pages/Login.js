@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useLogin } from "../hooks/useLogin"
+import { Link } from 'react-router-dom'
 
 const Login = () => {
     const [username, setUsername] = useState('')
@@ -29,6 +30,8 @@ const Login = () => {
                     placeholder="Password"
                 />
                 <button>Login</button>
+                <div className='signup-cta'>New to SOCIAL? Create an account.</div>
+                <Link to="/signup" className="signup-cta-button">Sign up</Link>
             </form>
         </div>
     )

@@ -17,7 +17,7 @@ const Signup = () => {
     return (
         <div>
             <form className="login" onSubmit={handleSubmit}>
-                <h3 className="login-title">Login to Soci<span className="blue">A</span><span className="red">L</span><span className="green">L</span></h3>
+                <h3 className="login-title">Sign up for <span className="blue">SO</span><span className="red">CI</span><span className="green">AL</span></h3>
                 <input 
                     type="text"
                     onChange={(e) => setUsername(e.target.value)}
