@@ -150,7 +150,7 @@ input {
   align-items: center;
   position: fixed;
   top: 0%;
-  width: 130px;
+  width: 220px;
   height: 100vh;
   background: #FFFFFF;
 }
@@ -160,17 +160,18 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
   margin-top: 50px;
+  width: 80%;
 }
 
 .social-logo {
-  width: 35px;
+  width: 40px;
   margin-bottom: 0px;
 }
 
 .social-logo-text {
-  font-size: 9px;
+  font-size: 10px;
   margin-top: 5px;
   font-weight: bold;
 }
@@ -197,13 +198,26 @@ input {
 .sidebar > button {
   background: none;
   border: none;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   cursor: pointer;
   font-family: Poppins;
+  height: 30px;
+  width: 80%;
+  border-radius: 20px;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 .sidebar > button:hover {
   font-weight: bold;
+  background: #FBFBFB;
+}
+
+.sidebar-icon {
+  height: 20px;
+  margin-right: 20px;
 }
 
 .main {
