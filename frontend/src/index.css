@@ -221,7 +221,7 @@ input {
 }
 
 .main {
-  margin-left: 130px;
+  margin-left: 220px;
   margin-bottom: 65px;
   display: flex;
   flex-direction: column;
@@ -232,6 +232,16 @@ input {
 .topic-container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  background: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  height: 50px;
+  width: 70%;
+  max-width: 600px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
 }
 
 .topic-icon {
@@ -274,7 +284,7 @@ input {
 .input-title {
   border: none;
   background-color: #FFFFFF;
-  box-shadow: 2px 2px 5px #DADADA;
+  border: 1px solid lightgray;
   border-radius: 10px;
   padding: 10px 20px;
   margin-top: 0px;
@@ -292,7 +302,7 @@ input {
 .input-content {
   border: none;
   background-color: #FFFFFF;
-  box-shadow: 2px 2px 5px #DADADA;
+  border: 1px solid lightgray;
   height: 75px;
   border-radius: 10px;
   padding: 10px 20px;
