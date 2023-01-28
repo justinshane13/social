@@ -77,8 +77,10 @@ const PostForm = ({topic}) => {
                             maxLength={300}
                         />
                         {emptyFields.includes('content') && <div className='input-error'>{error}</div>}
-                        <button className="input-button">Post</button>
-                        <div className="cancel-button" onClick={cancelPost}>Cancel</div>
+                        <div className="post-form-button-container">
+                            <button className="input-button">Post</button>
+                            <div className="cancel-button" onClick={cancelPost}>Cancel</div>
+                        </div>
                     </form>
                 </div>
             }

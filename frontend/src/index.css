@@ -55,7 +55,6 @@ input {
   padding-left: 15px;
   border: none;
   background-color: #FFFFFF;
-  box-shadow: 2px 2px 5px #DADADA;
   padding: 10px 20px;
   font-size: 16px;
   resize: none;
@@ -322,21 +321,44 @@ input {
   outline: 2px solid red;
 }
 
+.post-form-button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .input-button {
   margin-top: 0px;
   background: #4420E7;
   border: none;
-  height: 40px;
-  min-width: 200px;
+  height: 35px;
+  width: 45%;
   border-radius: 10px;
   color: #F1F6FD;
   font-size: 16px;
   cursor: pointer;
+  font-family: Poppins;
 }
 
 .input-button:hover {
   box-shadow: 4px 4px 10px #BABABA;
   font-weight: 500;
+}
+
+.cancel-button {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #4420E7;
+  border: none;
+  height: 35px;
+  width: 45%;
+  border-radius: 10px;
+  color: #F1F6FD;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: Poppins;
 }
 
 .input-error {
@@ -391,4 +413,16 @@ input {
 
 .date {
   font-size: 10px;
+}
+
+.delete-button {
+  background: #EB5429;
+  border: none;
+  height: 30px;
+  padding: 0px 10px;
+  border-radius: 10px;
+  color: #F1F6FD;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: Poppins;
 }

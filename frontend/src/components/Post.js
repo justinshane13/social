@@ -32,7 +32,7 @@ const Post = ({post}) => {
             <div className="post-content-container">
                 <div className="post-top-row">
                     <p className="author">{post.author}</p>
-                    {user && user.username === post.author && <button onClick={handleDelete}>Delete</button>}
+                    {user && user.username === post.author && <button onClick={handleDelete} className="delete-button">Delete</button>}
                 </div>
                 <p className="title">{post.title}</p>
                 <p className="content">{post.content}</p>
