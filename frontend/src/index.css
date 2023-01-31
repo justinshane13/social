@@ -93,6 +93,10 @@ input {
   margin-bottom: 30px;
 }
 
+.login > input {
+  border: 1px solid #ddd;
+}
+
 .login > button {
   margin-top: 15px;
   background: #4420E7;
@@ -156,22 +160,22 @@ input {
 
 .social-logo-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   margin-bottom: 30px;
   margin-top: 50px;
+  margin-left: 25px;
   width: 80%;
 }
 
 .social-logo {
-  width: 40px;
+  width: 30px;
   margin-bottom: 0px;
 }
 
 .social-logo-text {
-  font-size: 10px;
-  margin-top: 5px;
+  font-size: 18px;
+  margin-left: 10px;
   font-weight: bold;
 }
 
