@@ -26,6 +26,20 @@ const Home = () => {
         fetchPosts()
     }, [dispatch])
 
+    useEffect(() => {
+        const getNews = async () => {
+            const response = await fetch('https://api.api-ninjas.com/v1/exercises?muscle=triceps', {
+                headers: {
+                    'X-Api-Key': 'XUtO/JDl/QIg9GhjDco20A==cweHWrRYahHAL3Kv'
+                }
+            })
+            const json = await response.json()
+            console.log(json)
+        }
+
+        getNews()
+    }, [])
+
     const changeTopic = async (newTopic) => {
         setTopic(newTopic)
 
