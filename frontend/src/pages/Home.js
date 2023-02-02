@@ -72,8 +72,8 @@ const Home = () => {
             <Sidebar topic={topic} changeTopic={changeTopic}/>
             <div className="main">
                 <div className="topic-container">
-                    <h2>{topic}</h2>
                     <img src={`/images/${topic}.png`} className="topic-icon" alt='topic icon'/>
+                    <h2>{topic}</h2>
                 </div>
                 {user && <PostForm topic={topic} />}
                 {posts && posts.map(post => (
