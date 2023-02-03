@@ -16,9 +16,15 @@ const Signup = () => {
     }
 
     return (
-        <div>
+        <div className="login-page">
+            <div className="login-page-header">
+                <img className='login-social-logo-corner' src='images/Social-Logo.png' alt='Social logo' />
+                <div className="login-social-title-corner">Social</div>
+            </div>
             <form className="login" onSubmit={handleSubmit}>
-                <h3 className="login-title">Sign up for <span className="blue">SO</span><span className="red">CI</span><span className="green">AL</span></h3>
+                <img className='login-social-logo' src='images/Social-Logo.png' alt='Social logo' />
+                <h3 className="login-title">Sign up</h3>
+                <p className="login-to-signup">Already a member? <Link to="/login" className="link">Log in</Link></p>
                 <input 
                     type="text"
                     onChange={(e) => setUsername(e.target.value)}
@@ -31,8 +37,7 @@ const Signup = () => {
                     value={password}
                     placeholder="Password"
                 />
-                <button>Sign Up</button>
-                <div className='signup-cta'>Already have an account? <Link to="/login">Log in.</Link></div>
+                <button>Sign up</button>
             </form>
         </div>
     )

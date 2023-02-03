@@ -4,11 +4,12 @@ import { usePostsContext } from '../hooks/usePostsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { useLogout } from '../hooks/useLogout'
 import Sidebar from '../components/Sidebar'
-import Post from '../components/Post'
-import PostForm from '../components/PostForm'
+import Posts from '../components/Posts'
+import Workouts from '../components/Workouts'
+
 
 const Home = () => {
-    const {posts, dispatch} = usePostsContext()
+    const {dispatch} = usePostsContext()
     const {user} = useAuthContext()
     const {logout} = useLogout()
     const [topic, setTopic] = useState("General")
@@ -70,15 +71,9 @@ const Home = () => {
                 </div>
             )}
             <Sidebar topic={topic} changeTopic={changeTopic}/>
-            <div className="main">
-                <div className="topic-container">
-                    <img src={`/images/${topic}.png`} className="topic-icon" alt='topic icon'/>
-                    <h2>{topic}</h2>
-                </div>
-                {user && <PostForm topic={topic} />}
-                {posts && posts.map(post => (
-                    <Post key={post._id} post={post} topic={topic} />
-                ))}
+            <div className='posts-and-workouts-container'>
+                <Posts topic={topic} />
+                <Workouts />
             </div>
         </div>
     )
