@@ -8,7 +8,7 @@ const Posts = ({ topic }) => {
     const { user } = useAuthContext()
     
     return (
-        <div className="main">
+        <div className="posts">
             <div className="topic-form-container">
                 <div className="topic-container">
                     <img src={`/images/${topic}.png`} className="topic-icon" alt='topic icon'/>

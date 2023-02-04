@@ -1,10 +1,15 @@
+import Workout from '../components/Workout'
 
-
-const Workouts = () => {
-
+const Workouts = ({workouts}) => {
+    console.log(workouts)
 
     return (
-        <div className="workouts">Workouts Component</div>
+        <div className="workouts">
+            <div>Workouts</div>
+            {workouts.map(workout => (
+                <Workout workout={workout} />
+            ))}
+        </div>
     )
 }
 

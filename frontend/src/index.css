@@ -273,15 +273,21 @@ input {
 
 .posts-and-workouts-container {
   display: flex;
+  justify-content: space-around;
+  margin-left: 220px;
 }
 
-.main {
-  margin-left: 220px;
+/* Posts */
+
+.posts {
   margin-bottom: 65px;
+  margin-left: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
+  width: 100%;
+  max-width: 500px;
 }
 
 .topic-form-container {
@@ -289,8 +295,8 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70%;
-  max-width: 600px;
+  width: 100%;
+  max-width: 500px;
   border: 1px solid lightgray;
   border-radius: 8px;
   background: white;
@@ -304,6 +310,7 @@ input {
   justify-content: center;
   height: 50px;
   width: 100%;
+  max-width: 500px;
 }
 
 .topic-icon {
@@ -316,7 +323,7 @@ input {
   justify-content: center;
   padding: 0px;
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .form-flexbox {
@@ -325,14 +332,14 @@ input {
   justify-content: center;
   width: 100%;
   margin-top: 10px;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .form-flexbox > form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .profile-image-form {
@@ -378,10 +385,6 @@ input {
   outline: 1px solid green;
 }
 
-.error {
-  outline: 2px solid red;
-}
-
 .post-form-button-container {
   display: flex;
   justify-content: space-between;
@@ -389,6 +392,9 @@ input {
 }
 
 .add-post-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #4420E7;
   border: none;
   height: 35px;
@@ -404,6 +410,11 @@ input {
 .add-post-button:hover {
   box-shadow: 4px 4px 10px #BABABA;
   font-weight: 500;
+}
+
+.add-icon {
+  width: 20px;
+  margin-left: 10px;
 }
 
 .input-button {
@@ -448,12 +459,12 @@ input {
 .post {
   border: .5px solid lightgray;
   border-radius: 8px;
-  padding: 20px 20px;
   display: flex;
-  width: 70%;
-  max-width: 600px;
+  width: 100%;
+  max-width: 500px;
   background-color: #FFFFFF;
   margin-top: 40px;
+  padding: 20px 20px;
 }
 
 .profile-image {
@@ -505,7 +516,46 @@ input {
   font-family: Poppins;
 }
 
+/* Workouts */
+
 .workouts {
+  max-width: 400px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 70px;
+  margin-right: 50px;
+}
+
+.workout {
   width: 100%;
-  background: green;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 20px 20px;
+}
+
+.workout-name {
+  font-size: 16px;
+}
+
+.workout-muscle {
+  font-size: 12px;
+}
+
+.workout-difficulty {
+  font-size: 12px;
+}
+
+.workout-instructions {
+  font-size: 12px; 
+}
+
+.error {
+  outline: 2px solid red;
 }

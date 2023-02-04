@@ -13,6 +13,7 @@ const Home = () => {
     const {user} = useAuthContext()
     const {logout} = useLogout()
     const [topic, setTopic] = useState("General")
+    const [workouts, setWorkouts] = useState([])
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -28,17 +29,17 @@ const Home = () => {
     }, [dispatch])
 
     useEffect(() => {
-        const getNews = async () => {
+        const fetchWorkouts = async () => {
             const response = await fetch('https://api.api-ninjas.com/v1/exercises?muscle=triceps', {
                 headers: {
                     'X-Api-Key': 'XUtO/JDl/QIg9GhjDco20A==cweHWrRYahHAL3Kv'
                 }
             })
             const json = await response.json()
-            console.log(json)
+            setWorkouts(json)
         }
 
-        getNews()
+        fetchWorkouts()
     }, [])
 
     const changeTopic = async (newTopic) => {
@@ -73,7 +74,7 @@ const Home = () => {
             <Sidebar topic={topic} changeTopic={changeTopic}/>
             <div className='posts-and-workouts-container'>
                 <Posts topic={topic} />
-                <Workouts />
+                <Workouts workouts={workouts}/>
             </div>
         </div>
     )

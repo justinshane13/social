@@ -55,7 +55,7 @@ const PostForm = ({topic}) => {
 
     return (
         <div className="form-container">
-            {!isActive && <button onClick={() => setIsActive(true)} className="add-post-button">Add post</button>}
+            {!isActive && <button onClick={() => setIsActive(true)} className="add-post-button">Add post <img className="add-icon" src='/images/add-large.png' alt='add icon' /></button>}
             {isActive && 
                 <div className="form-flexbox">
                     <form onSubmit={handleSubmit}>
