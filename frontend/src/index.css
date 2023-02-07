@@ -300,7 +300,6 @@ input {
   border: 1px solid lightgray;
   border-radius: 8px;
   background: white;
-  margin-top: 20px;
   padding: 30px 20px;
 }
 
@@ -529,13 +528,29 @@ input {
   margin-right: 50px;
 }
 
+.workout-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  background: white;
+  padding: 30px 20px;
+  margin-top: 0px;
+}
+
 .workout {
   width: 100%;
   max-width: 250px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   border: 1px solid lightgray;
   border-radius: 10px;
+  width: 100%;
+  background: white;
   margin-top: 20px;
   padding: 20px 20px;
 }
@@ -553,7 +568,12 @@ input {
 }
 
 .workout-instructions {
-  font-size: 12px; 
+  font-size: 12px;
+  display: -webkit-box;
+  max-width: 200px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .error {
