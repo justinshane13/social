@@ -7,7 +7,7 @@ const Workouts = ({workouts}) => {
         <div className="workouts">
             <h2 className="workout-form-container">Workouts</h2>
             {workouts.map(workout => (
-                <Workout workout={workout} />
+                <Workout id={workout.name} workout={workout} />
             ))}
         </div>
     )
