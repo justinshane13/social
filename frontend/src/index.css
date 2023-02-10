@@ -29,19 +29,18 @@ label, input {
 }
 
 .logout-button {
-  background: #4420E7;
+  background: #FBFBFB;
+  color: #4420E7;
+  width: 70px;
   border: none;
   height: 30px;
-  width: 100px;
-  border-radius: 10px;
-  color: #F1F6FD;
   font-size: 12px;
   cursor: pointer;
   font-family: Poppins;
 }
 
 .logout-button:hover {
-  box-shadow: 4px 4px 10px #BABABA;
+  font-weight: bold;
 }
 
 input {
@@ -153,8 +152,7 @@ input {
 }
 
 .login > button:hover {
-  box-shadow: 4px 4px 10px #BABABA;
-  font-weight: 500;
+
 }
 
 .signup-cta {
@@ -183,8 +181,7 @@ input {
 }
 
 .signup-cta-button:hover {
-  box-shadow: 4px 4px 10px #BABABA;
-  font-weight: 500;
+
 }
 
 /* Sidebar */
@@ -407,8 +404,7 @@ input {
 }
 
 .add-post-button:hover {
-  box-shadow: 4px 4px 10px #BABABA;
-  font-weight: 500;
+
 }
 
 .add-icon {
@@ -429,8 +425,7 @@ input {
 }
 
 .input-button:hover {
-  box-shadow: 4px 4px 10px #BABABA;
-  font-weight: 500;
+
 }
 
 .cancel-button {
@@ -526,7 +521,6 @@ input {
   align-items: center;
   margin-left: 70px;
   margin-right: 50px;
-  background: orange;
 }
 
 .workout-form-container {
@@ -535,11 +529,13 @@ input {
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 250px;
   border: 1px solid lightgray;
-  border-radius: 8px;
+  border-radius: 10px;
   background: white;
-  padding: 20px 0px;
+  padding: 20px 20px;
   margin-top: 0px;
+  margin-bottom: 0px;
   font-family: Poppins;
 }
 
