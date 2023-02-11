@@ -151,10 +151,6 @@ input {
   font-family: Poppins;
 }
 
-.login > button:hover {
-
-}
-
 .signup-cta {
   text-align: center;
   margin-top: 50px;
@@ -178,10 +174,6 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.signup-cta-button:hover {
-
 }
 
 /* Sidebar */
@@ -403,10 +395,6 @@ input {
   font-family: Poppins;
 }
 
-.add-post-button:hover {
-
-}
-
 .add-icon {
   width: 20px;
   margin-left: 10px;
@@ -422,10 +410,6 @@ input {
   font-size: 16px;
   cursor: pointer;
   font-family: Poppins;
-}
-
-.input-button:hover {
-
 }
 
 .cancel-button {
@@ -537,6 +521,32 @@ input {
   margin-top: 0px;
   margin-bottom: 0px;
   font-family: Poppins;
+}
+
+.workout-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.select-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.workout-label {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.select-exercise {
+  width: 90%;
+  border-radius: 5px;
+  height: 25px;
+  font-family: Poppins;
+  font-size: 10px;
 }
 
 .workout {
