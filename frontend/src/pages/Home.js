@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { usePostsContext } from '../hooks/usePostsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
-import { useLogout } from '../hooks/useLogout'
+import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 import Posts from '../components/Posts'
 import Workouts from '../components/Workouts'
@@ -10,10 +10,7 @@ import Workouts from '../components/Workouts'
 
 const Home = () => {
     const {dispatch} = usePostsContext()
-    const {user} = useAuthContext()
-    const {logout} = useLogout()
     const [topic, setTopic] = useState("General")
-    const [workouts, setWorkouts] = useState([])
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -28,20 +25,6 @@ const Home = () => {
         fetchPosts()
     }, [dispatch])
 
-    useEffect(() => {
-        const fetchWorkouts = async () => {
-            const response = await fetch('https://api.api-ninjas.com/v1/exercises?muscle=triceps', {
-                headers: {
-                    'X-Api-Key': 'XUtO/JDl/QIg9GhjDco20A==cweHWrRYahHAL3Kv'
-                }
-            })
-            const json = await response.json()
-            setWorkouts(json)
-        }
-
-        fetchWorkouts()
-    }, [])
-
     const changeTopic = async (newTopic) => {
         setTopic(newTopic)
 
@@ -53,28 +36,13 @@ const Home = () => {
         }
     }
 
-    const handleClick = () => {
-        logout()
-    }
-
     return (
         <div className="homepage">
-            {user && (
-                <div className='logout-container'>
-                    <p className='logged-username'>{user.username}</p>
-                    <button className='logout-button' onClick={handleClick}>Log out</button>
-                </div>
-            )}
-            {!user && (
-                <div className='login-signup-buttons'>
-                    <Link to="/login" className="login-button">Log in</Link>
-                    <Link to="/signup" className="signup-button">Sign up</Link>
-                </div>
-            )}
+            <Navbar />
             <Sidebar topic={topic} changeTopic={changeTopic}/>
             <div className='posts-and-workouts-container'>
                 <Posts topic={topic} />
-                <Workouts workouts={workouts}/>
+                <Workouts/>
             </div>
         </div>
     )

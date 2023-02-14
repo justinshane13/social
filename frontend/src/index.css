@@ -9,11 +9,20 @@ label, input {
   display: block;
 }
 
+.navbar {
+  display: flex;
+  z-index: 101;
+  position: sticky;
+  top: 0;
+  box-shadow: 1px 1px 8px #77777777;
+}
+
 .login-signup-buttons {
   padding: 20px 20px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  background: #FBFBFB
 }
 
 .logout-container {
@@ -21,6 +30,7 @@ label, input {
   justify-content: flex-end;
   align-items: center;
   padding: 10px 20px;
+  background-color: #FBFBFB;
 }
 
 .logged-username {
@@ -188,16 +198,16 @@ input {
   width: 220px;
   height: 100vh;
   background: #FFFFFF;
+  padding-top: 80px;
 }
 
 .social-logo-container {
   display: flex;
   justify-content: left;
   align-items: center;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  margin-left: 20px;
+  padding-left: 20px;
   width: 80%;
+  background-color: #FBFBFB;
 }
 
 .social-logo {
@@ -277,6 +287,7 @@ input {
   height: 100%;
   width: 100%;
   max-width: 500px;
+  min-width: 300px;
 }
 
 .topic-form-container {
@@ -605,3 +616,27 @@ input {
 .error {
   outline: 2px solid red;
 }
+
+
+/* tablet & mobile styling */
+
+@media screen and (max-width: 900px) {
+
+  .navbar {
+    height: 50px;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 220px;
+    background: #FFFFFF;
+    position: fixed;
+    height: 50px;
+    background-color: blue;
+  }
+
+}
+

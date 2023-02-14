@@ -1,10 +1,36 @@
 import Workout from '../components/Workout'
+import {useState, useEffect} from 'react'
 
-const Workouts = ({workouts}) => {
-    console.log(workouts)
+const Workouts = () => {
+    const [workouts, setWorkouts] = useState([])
+    const [formData, setFormData] = useState({
+        muscle: "",
+        difficulty: ""
+    })
+    console.log(formData)
 
-    const getWorkouts = () => {
-        console.log('requested workouts')
+    useEffect(() => {
+        const fetchWorkouts = async () => {
+            const response = await fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${formData.muscle}&difficulty=${formData.difficulty}`, {
+                headers: {
+                    'X-Api-Key': 'XUtO/JDl/QIg9GhjDco20A==cweHWrRYahHAL3Kv'
+                }
+            })
+            const json = await response.json()
+            setWorkouts(json)
+        }
+
+        fetchWorkouts()
+    }, [formData])
+
+    const handleChange = (event) => {
+        const {name, value} = event.target
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [name]: value
+            }
+        })
     }
 
     return (
@@ -14,7 +40,7 @@ const Workouts = ({workouts}) => {
                 <form className="workout-form">
                     <div className="select-container">
                         <label className="workout-label">Muscle group:</label>
-                        <select className="select-exercise">
+                        <select name="muscle" onChange={handleChange} className="select-exercise">
                             <option value="biceps">biceps</option>
                             <option value="triceps">triceps</option>
                             <option value="chest">chest</option>
@@ -27,14 +53,13 @@ const Workouts = ({workouts}) => {
                     </div>
                     <div className="select-container">
                         <label className="workout-label" for="difficulty">Difficulty:</label>
-                        <select className="select-exercise">
+                        <select onChange={handleChange} className="select-exercise">
                             <option value="beginner">beginner</option>
                             <option value="intermediate">intermediate</option>
                             <option value="expert">expert</option>
                         </select>
                     </div>
                 </form>
-                <button onClick={getWorkouts}>Get Workouts</button>
             </div>
             {workouts.map(workout => (
                 <Workout id={workout.name} workout={workout} />
