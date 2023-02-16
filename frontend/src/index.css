@@ -305,16 +305,36 @@ input {
 
 .topic-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50px;
   width: 100%;
   max-width: 500px;
+}
+
+.topic-trigger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .topic-icon {
   height: 25px;
   margin-right: 10px;
+}
+
+.topic-list.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: .5s ease;
+}
+
+.topic-list.closed {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20);
+  transition: .5s ease;
 }
 
 .form-container {
