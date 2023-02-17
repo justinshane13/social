@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="navbar">
             <div className="social-logo-container">
                 <img src="/images/Social-Logo.png" alt="social-logo" className="social-logo"/>
-                <p className="social-logo-text">SOCIAL</p>
+                <p className="social-logo-text">ACTIVE</p>
             </div>
             {user && (
                 <div className='logout-container'>

@@ -17,7 +17,7 @@ const Login = () => {
         <div className="login-page">
             <div className="login-page-header">
                 <img className='login-social-logo-corner' src='images/Social-Logo.png' alt='Social logo' />
-                <div className="login-social-title-corner">Social</div>
+                <div className="login-social-title-corner">Active</div>
             </div>
             <form className="login" onSubmit={handleSubmit}>
                 <img className='login-social-logo' src='images/Social-Logo.png' alt='Social logo' />
