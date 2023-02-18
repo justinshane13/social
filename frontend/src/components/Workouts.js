@@ -7,7 +7,6 @@ const Workouts = () => {
         muscle: "",
         difficulty: ""
     })
-    console.log(formData)
 
     useEffect(() => {
         const fetchWorkouts = async () => {
@@ -52,8 +51,8 @@ const Workouts = () => {
                         </select>
                     </div>
                     <div className="select-container">
-                        <label className="workout-label" for="difficulty">Difficulty:</label>
-                        <select onChange={handleChange} className="select-exercise">
+                        <label className="workout-label">Difficulty:</label>
+                        <select name ="difficulty" onChange={handleChange} className="select-exercise">
                             <option value="beginner">beginner</option>
                             <option value="intermediate">intermediate</option>
                             <option value="expert">expert</option>

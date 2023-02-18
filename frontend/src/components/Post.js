@@ -19,7 +19,6 @@ const Post = ({post}) => {
             }
         })
         const json = await response.json()
-        console.log(json)
 
         if (response.ok) {
             dispatch({type: 'DELETE_POST', payload: json})

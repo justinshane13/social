@@ -9,7 +9,6 @@ export const useSignup = () => {
     const signup = async (username, password) => {
         setIsLoading(true)
         setError(null)
-        console.log("inside signup function" + username + password)
 
         const response = await fetch('/api/user/signup', {
             method: 'POST',
@@ -17,7 +16,6 @@ export const useSignup = () => {
             body: JSON.stringify({username, password})
         })
         const json = await response.json()
-        console.log(json)
 
         if (!response.ok) {
             setIsLoading(false)

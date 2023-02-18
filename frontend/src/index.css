@@ -216,25 +216,6 @@ input {
   font-weight: bold;
 }
 
-.blue {
-  margin-left: .25em;
-  text-decoration: underline;
-  text-decoration-color: blue;
-  text-decoration-thickness: 3px;
-}
-
-.red {
-  text-decoration: underline;
-  text-decoration-color: red;
-  text-decoration-thickness: 3px;
-}
-
-.green {
-  text-decoration: underline;
-  text-decoration-color: green;
-  text-decoration-thickness: 3px;
-}
-
 .link {
   color: #4420E7;
   text-decoration: none;
@@ -269,6 +250,31 @@ input {
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
+}
+
+.toggle-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+
+}
+
+.toggle-button {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid lightgray;
+}
+
+.selected {
+  background: beige;
 }
 
 /* Posts */

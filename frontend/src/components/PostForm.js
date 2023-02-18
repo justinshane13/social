@@ -21,8 +21,6 @@ const PostForm = ({topic}) => {
             topic: topic.toLowerCase()
         }
 
-        console.log(post)
-
         const response = await fetch('/api/posts', {
             method: 'POST',
             body: JSON.stringify(post),
